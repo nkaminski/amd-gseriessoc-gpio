@@ -1,0 +1,1 @@
+./dkms/amd_gseriessoc_gpio.h
