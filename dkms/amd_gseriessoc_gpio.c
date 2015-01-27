@@ -40,14 +40,14 @@
 
 #include <asm/io.h>
 
-#include "gpio-amd.h"
+#include "amd_gseriessoc_gpio.h"
 
 /* Module and version information */
-#define GPIO_VERSION "0.1"
+#define GPIO_VERSION "1.0"
 #define GPIO_MODULE_NAME "AMD GPIO"
 #define GPIO_DRIVER_NAME   GPIO_MODULE_NAME ", v" GPIO_VERSION
 
-#define DRV_NAME "amd-gpio"
+#define DRV_NAME "amd-gseriessoc-gpio"
 
 static u32 gpiobase_phys;
 static u32 iomuxbase_phys;

@@ -1,0 +1,1 @@
+/home/nashkaminski/amd-gseriessoc-gpio/dkms/amd_gseriessoc_gpio.h

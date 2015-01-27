@@ -1,0 +1,42 @@
+# Maintainer: Nash Kaminski <nashkaminski@comcast.net>
+# Contributor: Peter Chinetti <peter@chinetti.me>
+
+_pkgbase=amd-gseriessoc-gpio
+pkgname=amd-gseriessoc-gpio-dkms
+pkgver=1
+pkgrel=1
+pkgdesc="GPIO driver for AMD G series SoC"
+arch=('i686' 'x86_64')
+url="http://repository.timesys.com/buildsources/a/amd-gseriessoc-gpio/"
+license=('GPL2')
+depends=('dkms')
+conflicts=("${_pkgbase}")
+install=${pkgname}.install
+source=('amd_gseriessoc_gpio.c' 'amd_gseriessoc_gpio.h' 'Makefile' 'dkms.conf')
+md5sums=('e640d802a70536f9e5e6884dc32c45db'
+         '61120d3f357e2ff40acd85e86f82643f'
+         '42c50cce7f354560d897d11e30c172e8'
+         'c656f5435345f8119cdbcf0c525b0889')
+
+build() {
+  msg2 "Starting make..."
+  make
+}
+
+package() {
+  # Install
+  msg2 "Starting install..."
+
+  # Copy dkms.conf
+  install -Dm644 dkms.conf "${pkgdir}"/usr/src/${_pkgbase}-${pkgver}/dkms.conf
+
+  # Set name and version
+  sed -e "s/@_PKGBASE@/${_pkgbase}/" \
+      -e "s/@PKGVER@/${pkgver}/" \
+      -i "${pkgdir}"/usr/src/${_pkgbase}-${pkgver}/dkms.conf
+
+  # Copy sources (including Makefile)
+  cp -r Makefile "${pkgdir}"/usr/src/${_pkgbase}-${pkgver}/
+  cp -r *.c "${pkgdir}"/usr/src/${_pkgbase}-${pkgver}/
+  cp -r *.h "${pkgdir}"/usr/src/${_pkgbase}-${pkgver}/
+}

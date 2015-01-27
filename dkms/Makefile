@@ -1,4 +1,4 @@
-obj-m := gpio-amd.o
+obj-m := amd_gseriessoc_gpio.o
 
 SRC := $(shell pwd)
 KERNEL_SRC := "/usr/lib/modules/$(shell uname -r)/build/"
