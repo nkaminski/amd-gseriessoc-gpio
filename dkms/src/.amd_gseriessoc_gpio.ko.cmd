@@ -1,1 +1,0 @@
-cmd_/home/nashkaminski/amd-gseriessoc-gpio/dkms/src/amd_gseriessoc_gpio.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/nashkaminski/amd-gseriessoc-gpio/dkms/src/amd_gseriessoc_gpio.ko /home/nashkaminski/amd-gseriessoc-gpio/dkms/src/amd_gseriessoc_gpio.o /home/nashkaminski/amd-gseriessoc-gpio/dkms/src/amd_gseriessoc_gpio.mod.o
