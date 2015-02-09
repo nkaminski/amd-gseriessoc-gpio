@@ -1,6 +1,6 @@
 # amd-gseriessoc-gpio
 
-GPIO drivers with Arch Linux PKGBUILDs for AMD G seriie SoC's
+GPIO drivers with Arch Linux PKGBUILDs for AMD G series SoC's
 
 The PKGBUILD file in the root directory will build the static kernel module against the currently running kernel.
 
